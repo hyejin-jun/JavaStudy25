@@ -1,18 +1,14 @@
 package ch01;
 
-/*ÀÛ¼ºÀÚ: ÀüÇıÁø
- * ³¯Â¥: 2025-05-02
- * ³¯¾¾: Ãß¿ò
- *ÀÌ°ÍÀº ¿ø·¡ Ç¥½Ã°¡ ¾È µÇ´Â °Ô ¸Â´Ù.
- */
+
 
 
 public class Code1 {
 	
-	// ÇÁ¸°Æ® ¿¬½À
+	// í”„ë¦°íŠ¸ë¥¼ ì‹¤í–‰í•´ ë³´ì
 
 	public static void main(String[] args) {
-		System.out.println("Ã¹ ÀÚ¹Ù´Â ³Ê¹« ¾î·Á¿ö");
+		System.out.println("ì²« ìë°”ëŠ” ë„ˆë¬´ ì–´ë ¤ì›Œ!!");
 	System.out.println();
 
 	}

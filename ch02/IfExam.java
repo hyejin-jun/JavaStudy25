@@ -5,56 +5,40 @@ import java.util.Scanner;
 public class IfExam {
 
 	public static void main(String[] args) {
-		// If(Á¶°Ç¹®) {½ÇÇà¹®}
-		// Á¶°Ç¹®¿¡ true°¡ Ã³¸®µÇ¸é Áß°ýÈ£ ¾ÈÂÊÀÌ ½ÇÇàµÈ´Ù
-		// Á¶°Ç¹®¿¡ false°¡ Ã³¸®µÇ¸é Áß°ýÈ£ ¾ÈÂÊÀÌ ½ÇÇàµÇÁö ¾Ê´Â´Ù
+		// ifë¬¸ elseë¬¸ ë° equalsIgnoreCaseë¬¸ í™œìš©í•˜ê¸°
+
+		
+	Scanner input = new Scanner (System.in) ;
 	
-		Scanner input = new Scanner (System.in) ;
-		// Å°º¸µå·Î ÀÔ·Â¹ÞÀ» ¼ö ÀÖ´Â °´Ã¼¸¦ »ý¼ºÇÏ¿© input º¯¼ö¿¡ ¿¬°á
+	System.out.print("ì„±ì  í™•ì¸í•  í•™ìƒ ì„±í•¨ì„ ìž…ë ¥í•´ ì£¼ì„¸ìš”!! >> ");
+	String name = input.next() ;
+	
+	System.out.print("ì„±ì  í™•ì¸í•  í•™ìƒì˜ ì ìˆ˜ë¥¼ ìž…ë ¥í•´ ì£¼ì„¸ìš”!! >> ");
+	int star = input.nextInt() ;  // intë¬¸ ì´ìš©
+	
+	System.out.print("ì„±ì ì„ í™•ì¸í•˜ê³  ì‹¶ìœ¼ë©´ yes ë¬¸êµ¬ë¥¼ ìž…ë ¥í•´ ì£¼ì„¸ìš”!! >>  ");
+	String or = input.next() ;
+	name.equalsIgnoreCase("yes") ;  // equalsIgnoreCaseë¬¸
+	
+	
+	if (star > 0 && star <= 100) {
 		
-		System.out.print("±ÍÇÏÀÇ ¼ºÇÔÀ» ÀÔ·ÂÇÏ¼¼¿ä!! ");
-		System.out.print(">>> ");
-		String name = input.next() ;  // Å°º¸µå·Î ÀÔ·Â¹ÞÀº ÀÌ¸§À» name º¯¼ö¿¡ ³ÖÀ½
+		if (star >= 90) {  
+		 System.out.println("í•™ìƒì˜ ë“±ê¸‰ì€ Aìž…ë‹ˆë‹¤!! "); }
 		
+		else if (star >= 80)  
+		{ System.out.println("í•™ìƒì˜ ë“±ê¸‰ì€ Bìž…ë‹ˆë‹¤!! "); }
 		
-		System.out.print("±ÍÇÏÀÇ Á¡¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä!! ");
-		System.out.print(">>> ");
+		else if (star >= 70) 
+		{ System.out.println("í•™ìƒì˜ ë“±ê¸‰ì€ Cìž…ë‹ˆë‹¤!! "); }
 		
-		int score = input.nextInt() ; // Å°º¸µå·Î ÀÔ·Â¹ÞÀº Á¤¼ö¸¦ score¿¡ ³ÖÀ½
+		else { System.out.println("í•™ìƒì˜ ë“±ê¸‰ì€ Fìž…ë‹ˆë‹¤!! "); } } // ifë¬¸ ì¢…ë£Œ
 		
-		if (score > 0 && score <= 100) {  // 0º¸´Ù Å©°Å³ª 100 ÀÌÇÏÀÌ¸é true
-			if (score >= 90) { // score º¯¼ö¿¡ ÀÔ·ÂµÈ °ªÀÌ 90 ÀÌ»óÀÎÁö ¹¯´Â ÄÚµå
-				System.out.println(name + " ´ÔÀÌ ÀÓ·ÂÇÏ½Å Á¡¼ö°¡ 90 Á¡ ÀÌ»óÀÔ´Ï´Ù.");
-				System.out.println("Á¡¼ö: " + score + " Á¡ µî±Þ A");
-			}
+		else {System.out.println("ë¬¸ìžë¥¼ ìž˜ëª» ìž…ë ¥í•˜ì˜€ìŠµë‹ˆë‹¤ ã… _ã…  "); }
+			System.out.println("í”„ë¡œê·¸ëž¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤!! ");
+		
+	
+	
+	}  // main ë©”ì„œë“œ ì¢…ë£Œ
 
-			else if (score >= 80) {
-				System.out.println(name + " ´ÔÀÌ ÀÓ·ÂÇÏ½Å Á¡¼ö°¡ 89 ~ 80 Á¡ ÀÌ»óÀÔ´Ï´Ù.");
-				System.out.println("Á¡¼ö: " + score + " Á¡ µî±Þ B");
-			}
-
-			else if (score >= 70) {
-				System.out.println(name + " ´ÔÀÌ ÀÓ·ÂÇÏ½Å Á¡¼ö°¡ 79 ~ 70 Á¡ ÀÌ»óÀÔ´Ï´Ù.");
-				System.out.println("Á¡¼ö: " + score + " Á¡ µî±Þ C");
-			}
-
-			else if (score >= 60) {
-				System.out.println(name + " ´ÔÀÌ ÀÓ·ÂÇÏ½Å Á¡¼ö°¡ 69 ~ 60 Á¡ ÀÌ»óÀÔ´Ï´Ù.");
-				System.out.println("Á¡¼ö: " + score + " Á¡ µî±Þ D");
-			}
-
-			else {
-				System.out.println(name + " ´ÔÀÌ ÀÔ·ÂÇÏ½Å Á¡¼ö°¡ ³·¾Æ µî±ÞÀÌ F·Î »êÃâµÇ¾ú½À´Ï´Ù.");
-				System.out.println("Á¡¼ö: " + score + " Á¡ µî±Þ F");
-			}  // Á¤»ó°ªÀÌ ÀÔ·ÂµÇ¾úÀ» ¶§ ½ÇÇà¹®
-		} 
-		else { System.out.println(name + " ´Ô ÀÔ·Â°ªÀ» È®ÀÎÇØ ÁÖ¼¼¿ä!!");
-		System.out.println("ÇöÀç ÀÔ·Â°ªÀº " + score + " Á¡ÀÔ´Ï´Ù" );
-		}
-		System.out.println("ÇÁ·Î±×·¥ÀÌ Á¾·áµÇ¾ú½À´Ï´Ù!!"); 
-		
-		
-
-	}  // main ¸Þ¼­µå Á¾·á > º¯¼ö(input, name, score)°¡ »ç¶óÁü
-
-}  // class Á¾·á > ¸Þ¼­µå°¡ »ç¶óÁü > ÇÁ·Î±×·¥ Á¾·á
+}  // class ì¢…ë£Œ

@@ -5,34 +5,23 @@ import java.util.Scanner;
 public class ForExam {
 
 	public static void main(String[] args) {
-		// for¹®Àº ¹İº¹¹®À¸·Î ÃÊ±âÈ­½Ä, Á¶°Ç½Ä, Áõ°¨½ÄÀ¸·Î ¸¸µç´Ù.
-		// for(int i = 0 ; ¤Á < 10 ; i++) { ¹İº¹ ½ÇÇà¹® ; }
-		// i´Â 0ºÎÅÍ 10 ÀÌÀü±îÁö 1¾¿ ¹İº¹ÇÏ´Â ½ÇÇà¹®
-		// for¹®¿¡¼­ »ç¿ëÇÏ´Â i ÃÊ±â°ªÀº for{} ³¡³ª¸é »ç¶óÁø´Ù.
+		// forë¬¸ ì‘ì„±í•´ ë³´ê¸° (1ë‹¨ì—ì„œ 9ë‹¨ê¹Œì§€ ëª¨ë“  ë‹¨ì´ ê³±í•˜ê¸°ê°€ ë˜ê²Œ ë§Œë“¤ê¸°)
 
 		Scanner inputInt = new Scanner(System.in);
-		System.out.println("È®ÀÎÇÒ max °ªÀ» ÀÔ·ÂÇÏ¼¼¿ä!! ");
-		System.out.print("¼ıÀÚ ÀÔ·Â >>>  ");
-		int max = inputInt.nextInt(); // Å°º¸µå·Î ÀÔ·ÂÇÑ ¼ıÀÚ¸¦ max º¯¼ö¿¡ ³ÖÀ½
-		System.out.println("È®ÀÎÇÒ min °ªÀ» ÀÔ·ÂÇÏ¼¼¿ä!! >>>  ");
-		System.out.print("¼ıÀÚ ÀÔ·Â >>>  ");
-		int min = inputInt.nextInt(); // Å°º¸µå·Î ÀÔ·ÂÇÑ ¼ıÀÚ¸¦ min º¯¼ö¿¡ ³ÖÀ½
 
-		System.out.println("È®ÀÎÇÒ Áõ°¡°ª °ªÀ» ÀÔ·ÂÇÏ¼¼¿ä!! >>>  ");
-		System.out.print("¼ıÀÚ ÀÔ·Â >>>  ");
-		int add = inputInt.nextInt(); // Å°º¸µå·Î ÀÔ·ÂÇÑ ¼ıÀÚ¸¦ add º¯¼ö¿¡ ³ÖÀ½
+			
+			// ì•ë‹¨ì— forë¬¸ êµ¬í˜„
+			for (int A = 5 ; A <= 8 ; A++) { // 2ë¶€í„° 9ê¹Œì§€ 1ì”© ì¦ê°€
+				System.out.println("=========" + A + " ë‹¨ ======"); 
+				
+				// ë’¤ë‹¨ì— forë¬¸ êµ¬í˜„
+				for (int B = 3 ; B <= 6 ; B++) { // 1ë¶€í„° 9ê¹Œì§€ 1ì”© ì¦ê°€
+					System.out.println(A + " X " + B + " = " + (A*B));  }
+			
+		} // ë‘ ë²ˆì§¸ for ì¢…ë£Œ
 
-		System.out.println(min + " ~ " + max + " ±îÁö" + add + "Áõ°¡°ªÀ» Ãâ·ÂÇØ º¸ÀÚ!!");
 
-		int total = 0;
-		// total = total1 + 1 ; // * 100 ¹øÀ» ½á¾ß ÇÑ´Ù
 
-		for (total = min; total <= max; total = total + add) {
-			// total += total = add
-			System.out.println("Ãâ·Â Å×½ºÆ®: " + total);
+	} // main ë©”ì„œë“œ ì¢…ë£Œ
 
-		} // for¹® Á¾·á
-
-	} // main ¸Ş¼­µå Á¾·á
-
-} // class Á¾·á¹®
+} // class ì¢…ë£Œ

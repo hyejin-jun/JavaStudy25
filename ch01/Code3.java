@@ -1,25 +1,25 @@
 package ch01;
 
 public class Code3 {
-	// °¢Á¾ º¯¼ö ÄÚµå »ç¿ë ¿¬½À
-	// °¢Á¾ »çÄ¢¿¬¼ö »ç¿ë ¿¬½À
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¢ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 	public static void main(String[] args) {
 		
 		int x = 1 ;
 		char y =125 ;
-		char z = '°¡' ;
+		char z = 'ê°€' ;
 		
 		System.out.println("int = " + x);
 		System.out.println("char = " + y);
 		System.out.println("char = " + z);
 		
-		char vall = 'B' ;  // ÀÌ°Í¸¸ Ä¡¸é ³ë¶õ ¿À·ù ¶ä System.out.println << ÀÌ°É ÀÔ·ÂÇÏ¿© ¾Æ·¡¿¡ ¶ß°Ô ¸¸µé±â!!
-		System.out.println("ÄÚµå´Â: " + vall);
+		char vall = 'B' ;  // ï¿½Ì°Í¸ï¿½ Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ System.out.println << ï¿½Ì°ï¿½ ï¿½Ô·ï¿½ï¿½Ï¿ï¿½ ï¿½Æ·ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½!!
+		System.out.println("ï¿½Úµï¿½ï¿½: " + vall);
 		
 		int b1 ;
 		b1 = 50 ;
-		System.out.println("¿À´Ã ¿Âµµ = " + b1);
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½Âµï¿½ = " + b1);
 		
 		int aa, ss, dd, ff, total, avg ;
 		
@@ -29,14 +29,14 @@ public class Code3 {
 		ff = 35 ;
 		total = aa + ss + dd + ff ;
 		avg = total / 4 ;
-		System.out.println("Á¶Á¤Ä¡ ÃÑ Á¡¼ö = " + total);
-		System.out.println("Á¶Á¤Ä¡ Æò±Õ Á¡¼ö = " + avg);
+		System.out.println("ï¿½ï¿½ï¿½ï¿½Ä¡ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ = " + total);
+		System.out.println("ï¿½ï¿½ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ = " + avg);
 		
-		char fristname = 'Àü' ;
-		char fristName = '±è' ;
+		char fristname = 'ì „' ;
+		char fristName = 'ê¹€' ;
 		
-		System.out.println("³ªÀÇ ¼ºÀº = " + fristname);
-		System.out.println("¾ö¸¶ÀÇ ¼ºÀº = " + fristName);
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ = " + fristname);
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ = " + fristName);
 		
 		int code1 = 70 ;
 		int code2 = 0b0011 ;

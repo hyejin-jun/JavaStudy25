@@ -5,28 +5,28 @@ import java.util.Scanner;
 public class Code10 {
 
 	public static void main(String[] args) {
-		// ·Î±×ÀÎ È­¸é ¸¸µé¾î º¸±â
+		// ë¡œê·¸ì¸í•  ìˆ˜ ìˆëŠ” í”„ë¡œê·¸ë¨ì„ ë§Œë“¤ì–´ ë³´ì
 		
 		String loginid = "jhj1234" ;
 		String loginpw = "12345678" ;
 		
-	    Scanner input = new Scanner (System.in);  // inputÀÌ ´İÈ÷Áö ¾Ê¾Ò´Ù°í ÇÔ ±×·¸´Ù°í È­»ìÇ¥ ´©¸£¸é try°¡ ¶ß´õ´Ï ÄÚµå°¡ ¹Ù²î¸ç ¿À·ù°¡ ¶ßÁö´Â ¾ÊÀ½
+	    Scanner input = new Scanner (System.in);  // input ë’¤ì— ë„£ëŠ” ê²ƒì€ ê¸€ìë¥¼ ì…ë ¥í•œë‹¤ëŠ” ëœ»
 
-			System.out.print("¾ÆÀÌµğ¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
+			System.out.print("ë¡œê·¸ì¸í•  ì•„ì´ë””ë¥¼ ì…ë ¥í•˜ì„¸ìš” >>> ");
 			String id = input.nextLine() ;
-			System.out.print("ÆĞ½º¿öµå¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
+			System.out.print("ë¡œê·¸ì¸í•  íŒ¨ìŠ¤ì›Œë“œë¥¼ ì…ë ¥í•˜ì„¸ìš” >>> ");
 			String pw = input.nextLine() ;
 			
 			if((loginid.equals(id)) & loginpw.equals(pw))  
-				{System.out.println("·Î±×ÀÎÀ» ¼º°øÇÏ¿´½À´Ï´Ù!!");}
+				{System.out.println("ë¡œê·¸ì¸ì´ ë˜ì—ˆìŠµë‹ˆë‹¤!!! ");}
 				else {
-			System.out.println("·Î±×ÀÎÀ» ½ÇÆĞÇÏ¿´½À´Ï´Ù!!"); 
-			} // if Á¾·á
+			System.out.println("ë¡œê·¸ì¸ì„ ì‹¤íŒ¨í•˜ì˜€ìŠµë‹ˆë‹¤!!! "); 
+			} // if ì¢…ë£Œ
 	    
 	    
 	   
 
 	
 	 
-} // main ¸Ş¼­µå Á¾·á
-}  // class Á¾·á
+} // main ë©”ì„œë“œ ì¢…ë£Œ
+}  // class ì¢…ë£Œ
