@@ -45,7 +45,6 @@ public class CarRunExam {
 			if (speed >= MAXSPEED) { // 현재 속도가 최고 속도보다 크거나 같으면
 				speed = MAXSPEED ; } // 300 이상 출력 안 됨
 			System.out.println("현재 속도:   " + speed + " km/h");
-			
 			break;
 			
 		case 2:
@@ -66,7 +65,7 @@ public class CarRunExam {
 			break;
 		} // switch 종료문
 	} // while문 종료
-		
+
 	System.out.println("자동차가 사라집니다!! ");
 		
 		
