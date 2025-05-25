@@ -105,15 +105,15 @@ public class Member1 { // 필드
 	
 		for (int i = 0; i < members.length; i++) {
 			
-
 			
 			if (members[i].mmo == byemno) {
 				System.out.println("삭제하실 회원의 아이디가 맞으실까요 >> " + members[i].id);
 				System.out.println("삭제하실 회원의 비밀번호가 맞으실까요 >> " + members[i].pw);
 				System.out.println("====================================");
 				System.out.println("삭제를 원하시면 1 번을 누르시고 원하시지 않으시면 2 번을 눌러 주세요"); 
+				int del1 = inputInt.nextInt() ;
 				}else {System.out.println("번호를 잘못 입력하였습니다");
-			
+					
 			int del = inputInt.nextInt() ;
 				
 				switch (del) {
@@ -129,12 +129,9 @@ public class Member1 { // 필드
 				case 2:
 					System.out.println("삭제를 하지 않겠습니다!! ");
 					break ;}
-				
-	
-		
 
-			}
-		}
+			}	// switch 종료
+		}	// for 종료
 		return null;
 	}
 }
