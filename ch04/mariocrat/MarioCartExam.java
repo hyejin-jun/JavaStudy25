@@ -17,18 +17,30 @@ public class MarioCartExam {
 	public static Scanner input = new Scanner(System.in);
 
 	public static MemberDTO[] memberDTOs = new MemberDTO[10]; // 회원 관리 필드
-	public static CharacterDTO[] characterDTOs = new CharacterDTO[5]; // 캐릭터 관리 필드
+	public static CharacterDTO[] characterDTOs = new CharacterDTO[15]; // 캐릭터 관리 필드
 	public static CartDTO[] cartDTOs = new CartDTO[11]; // 자동차 관리 필드
 	public static GliderDTO[] gliderDTOs = new GliderDTO[7]; // 글라이더 관리 필드
 	public static TireDTO[] tireDTOs = new TireDTO[8]; // 타이어 관리 필드
 	public static ItemDTO[] itemDTOs = new ItemDTO[6]; // 아이템 관리 필드
 
-	public static MemberDTO loginStart ;		// 로그인 세션과 같은 것
-	private static CharacterDTO generation;		// 캐릭터 세선과 같은 것
+	public static MemberDTO loginstste ;		// 로그인 세션과 같은 것
+	private static CharacterDTO generation;		// 캐릭터 세션과 같은 것
 	
 	// 생성자
 	
 	static {
+		// 미리 정의된 회원
+		MemberDTO memberDTO0 = new MemberDTO("kkk", "1234", "김김김", "kkk@gmail.com", characterDTOs[3]);
+		MemberDTO memberDTO1 = new MemberDTO("lll", "1234", "이이이", "lll@gmail.com", characterDTOs[1]);
+		MemberDTO memberDTO2 = new MemberDTO("ppp", "1234", "박박박", "ppp@gmail.com", characterDTOs[0]);
+		
+		memberDTOs[0] = memberDTO0 ;
+		memberDTOs[1] = memberDTO1 ;
+		memberDTOs[2] = memberDTO2 ;
+		
+		
+		
+		// 미리 정의된 캐릭터
 		CharacterDTO characterDTO0 = new CharacterDTO("0", "마리오", 1.0, 2.0, 3.0, 4.0, 5.0);
 		CharacterDTO characterDTO1 = new CharacterDTO("1", "데이지", 1.2, 2.2, 3.2, 4.2, 5.2);
 		CharacterDTO characterDTO2 = new CharacterDTO("2", "킹부끄", 1.4, 2.4, 3.4, 4.4, 5.4);
@@ -43,7 +55,7 @@ public class MarioCartExam {
 		
 
 	}		// 스태틱 블록 종료 (메인 때 리셋)
-	
+
 
 	public static void main(String[] args) { // 메서드
 
@@ -60,13 +72,14 @@ public class MarioCartExam {
 				System.out.println("회원 관리 메서드로 진입하였습니다");
 
 				MarioService marioServiceMenu1 = new MarioService() ;
-				marioServiceMenu1 =  marioServiceMenu1.marioServiceMenu(input, memberDTOs, loginStart) ;
-				
+				marioServiceMenu1 =  marioServiceMenu1.marioServiceMenu(input, memberDTOs, loginstste) ;
+				// 메뉴에 입력값은 Scanner 객체, 회원 배열, 로그인 상태 객체
+				// 리턴은 로그인 상태 객체를 받는다
 				break;
 			case "2":
 				System.out.println("카트 관리 메서드로 진입하였습니다");
 				MarioCharacterSevrvice marioCharacterSevrvice1 = new MarioCharacterSevrvice() ;
-				marioCharacterSevrvice1 = marioCharacterSevrvice1.marioCharacterSevrvice(input, characterDTOs, loginStart, generation, cartDTOs, itemDTOs, args) ;
+				marioCharacterSevrvice1 = marioCharacterSevrvice1.marioCharacterSevrvice(input, characterDTOs, loginstste, generation, cartDTOs, itemDTOs, args) ;
 				
 				
 				break;

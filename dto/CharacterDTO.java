@@ -9,7 +9,7 @@ public class CharacterDTO {
 	public double threh ;		// 캐릭터 속도
 	public double rkthr ;		// 캐릭터 가속
 	public double gosemffld ;	// 캐릭터 핸들링
-	private CharacterDTO[] characterDTOs;
+	public CharacterDTO[] characterDTOs;
 	
 	
 

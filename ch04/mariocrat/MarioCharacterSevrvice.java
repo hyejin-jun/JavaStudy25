@@ -16,6 +16,9 @@ public class MarioCharacterSevrvice {
 
 
 
+	public String seCharacterDTO;
+
+
 	public MarioCharacterSevrvice marioCharacterSevrvice(Scanner input, CharacterDTO[] characterDTOs, MemberDTO loginStart, CharacterDTO generation, CartDTO[] cartDTOs, ItemDTO[] itemDTOs, String[] cartName) { // 캐릭터 서비스 메서드
 
 		System.out.println("========== 카드 관리 메서드에 진입하였습니다 ============");
@@ -41,7 +44,7 @@ public class MarioCharacterSevrvice {
 					break;
 				case "2":
 					System.out.println("캐릭터 변경 메서드에 진입하였습니다");
-					characterCh(input, characterDTOs, null, null, 0.0, 0.0, 0.0, 0.0); 
+					characterCh(input, characterDTOs, null, null, 0.0, 0.0, 0.0, 0.0, seCharacterDTO); 
 					break;
 				case "3":
 					System.out.println("프로그램을 종료합니다");
@@ -111,7 +114,31 @@ public class MarioCharacterSevrvice {
 		return null;
 	}
 
-	private void itemvksao(Scanner input, ItemDTO[] itemDTOs) {	// 아이템 판매 메서드
+	public void characterCh(Scanner input, CharacterDTO[] characterDTOs, Object no, Object name, double anrp, double threh, double rkthr, double gosemffld, String seCharacterDTO2) {	// 캐릭터 변경 메서드
+			System.out.println("현재 캐릭터는 " + seCharacterDTO +" 입니다");		// 오류 뜸 널 뜸
+			System.out.println("마리오 | 데이지 | 킹부끄 | 뻐끔왕 | 종료 중 선택해 주세요");
+				
+				System.out.print("이름을 한글로 입력하세요 >>>>>>  ");
+				String chString = input.next();
+
+				for (int i = 0; i < characterDTOs.length; i++) {
+					
+					if (characterDTOs[i].name.equals(chString)) {
+						System.out.println(chString + " 로 변경합니다");
+						System.out.println("캐릭터를 변경하였습니다");
+					break ;
+					} else {
+						System.out.println("캐릭터 변경에 실패하였습니다");
+						break;
+					} // else 종료
+				} // for 종료
+				return;
+			} // 
+		
+			
+		
+	
+	public void itemvksao(Scanner input, ItemDTO[] itemDTOs) {	// 아이템 판매 메서드
 		System.out.println("모든 아이템 다 200 루찌로 판매됩니다");
 		System.out.println("1. 꽃 | 2. 선글라스 | 3. 클로버 | 4. 리본 | 5. 별 | 9. 종료");
 		System.out.print("번호를 입력하세요 >>>  ");
@@ -120,7 +147,7 @@ public class MarioCharacterSevrvice {
 		return ;
 	}
 
-	private void itemrnao(Scanner input, ItemDTO[] itemDTOs) {	// 아이템 구매 메서드
+	public void itemrnao(Scanner input, ItemDTO[] itemDTOs) {	// 아이템 구매 메서드
 		boolean itemww = true ;
 		System.out.println("모든 아이템 400 루찌입니다");
 		System.out.println("1. 꽃 | 2. 선글라스 | 3. 클로버 | 4. 리본 | 5. 별 | 9. 종료");
@@ -188,7 +215,7 @@ public class MarioCharacterSevrvice {
 				case "0":
 				case "마리오":
 					System.out.println("마리오를 선택하였습니다 마리오 정보를 입력합니다");
-					System.out.println("👲🏻: " + characterDTOs[0].no + " 번 | 이름: " + characterDTOs[0].name + " | 무게: "
+					System.out.println("👲🏻: " +  "이름: " + characterDTOs[0].name + " | 무게: "
 							+ characterDTOs[0].anrp + " | 속도: " + characterDTOs[0].threh + " | 가속: " + characterDTOs[0].rkthr
 							+ " | 핸들링: " + characterDTOs[0].gosemffld);
 					break;
@@ -196,7 +223,7 @@ public class MarioCharacterSevrvice {
 				case "1":
 				case "데이지":
 					System.out.println("데이지를 선택하였습니다 루이지 정보를 입력합니다");
-					System.out.println("👸🏼: " + characterDTOs[1].no + " 번 | 이름: " + characterDTOs[1].name + " | 무게: "
+					System.out.println("👸🏼: " + " 이름: " + characterDTOs[1].name + " | 무게: "
 							+ characterDTOs[1].anrp + " | 속도: " + characterDTOs[1].threh + " | 가속: " + characterDTOs[1].rkthr
 							+ " | 핸들링: " + characterDTOs[1].gosemffld);
 					break;
@@ -204,7 +231,7 @@ public class MarioCharacterSevrvice {
 				case "2":
 				case "킹부끄":
 					System.out.println("킹부끄를 선택하였습니다 킹부끄 정보를 입력합니다");
-					System.out.println("👻: " + characterDTOs[2].no + " 번 | 이름: " + characterDTOs[2].name + " | 무게: "
+					System.out.println("👻: " + " 이름: " + characterDTOs[2].name + " | 무게: "
 							+ characterDTOs[2].anrp + " | 속도: " + characterDTOs[2].threh + " | 가속: " + characterDTOs[2].rkthr
 							+ " | 핸들링: " + characterDTOs[2].gosemffld);
 					break;
@@ -212,45 +239,25 @@ public class MarioCharacterSevrvice {
 				case "3":
 				case "뻐끔왕":
 					System.out.println("뻐끔왕를 선택하였습니다 뻐끔왕 정보를 입력합니다");
-					System.out.println("🐲: " + characterDTOs[3].no + " 번 | 이름: " + characterDTOs[3].name + " | 무게: "
+					System.out.println("🐲: " + " 이름: " + characterDTOs[3].name + " | 무게: "
 							+ characterDTOs[3].anrp + " | 속도: " + characterDTOs[3].threh + " | 가속: " + characterDTOs[3].rkthr
 							+ " | 핸들링: " + characterDTOs[3].gosemffld);
-					select1 = false;
 					CharacterDTO seCharacterDTO ;	// 선택한 캐릭터 저장 변수
+					select1 = false;
 					break;
-
 				default:
 					System.out.println("번호를 잘못 입력하였습니다");
 					break;
 				} // switch (sun) 종료
-
 				return;
 			}		// 캐릭터 생성 메서드
+
 	
-
-	public void characterCh(Scanner input, CharacterDTO[] characterDTOs,  String no, String name, double anrp, double threh, double rkthr, double gosemffld) {	// 캐릭터 변경 메서드
-			System.out.println("0. 마리오 | 1. 데이지 | 2. 킹부끄 | 3. 뻐끔왕 | 0. 종료 중 선택해 주세요");
-			System.out.print("이름을 입력하세요 >>>>>>  ");
-			String chString = input.next();
-
-			for (int i = 0; i < characterDTOs.length; i++) {
-				System.out.println(characterDTOs[i].name + " 로 변경합니다");
-				if (characterDTOs[i].name.equalsIgnoreCase(name) || characterDTOs[i].no.equalsIgnoreCase(no)) {
-					System.out.println("캐릭터를 변경하였습니다");
-				break ;
-				} else {
-					System.out.println("캐릭터 변경에 실패하였습니다");
-					break;
-				} // else 종료
-			} // for 종료
-			return;
-		} // 
 }
 
 
 
 
-	
 
 
 
