@@ -1,0 +1,248 @@
+desc emp;       -- emp 테이블 구조 보기
+select * from emp; -- emp 테이블 내용 보기
+
+desc dept;      -- dept 테이블 구조 보기
+select * from dept; -- dept 테이블 내용 보기 
+
+desc bonus;     -- bonus 테이블 구조 보기
+select * from bonus;-- bonus 테이블 내용 보기
+
+desc salgrade;  -- salgrade 테이블 구조 보기
+select * from salgrade;-- salgrade 테이블 내용 보기
+
+select empno, ename, deptno from emp; -- 테이블 부분 열 출력
+
+select distinct deptno from emp; -- 중복 열 제거
+
+select distinct job, deptno from emp; -- 중복 열 제거 (여러 개)
+
+select all job, deptno from emp; -- 중복되는 열 제거 없이 그대로 출력
+
+select ename, sal, sal*12+comm, comm from emp ; -- 열에 연산식 사용 후 출력
+
+select ename, sal, sal+sal+sal+sal+sal+sal+sal+comm, comm from emp ; -- 곱하기 미사용 후 수입 출력
+
+select ename, sal, sal*12+comm as annsal, comm from emp ; -- 별칭 사용 후 수입 출력
+
+select * from emp order by sal ; -- 오름차순 사용
+
+select * from emp order by sal desc; -- 내림차순 사용
+
+select * from emp order by deptno asc, sal desc; -- deptno는 오름차순 sal은 내림차순 순서
+
+select * from emp where deptno = 30 ; -- 부서 번호가 30인 데이터만 출력
+
+select * from emp where deptno = 30 and job = 'SALESMAN'; -- AND 연산자 사용 (여러 개의 조건식)
+
+select * from emp where deptno = 30 or job = 'CLERK'; -- or 연산자 사용 (여러 개의 출력 조건)
+
+select * from emp where sal * 12 = 36000; -- 곱셈 산술 연산자
+
+select * from emp where sal >= 3000; -- 비교 연산자
+
+select * from emp where ename >= 'F'; -- 문자열 비교
+
+select * from emp where ename <= 'FORD'; -- 대소 연산자 비교 문자열
+
+select * from emp where sal != 3000; -- 등가 비교 연산자
+
+select * from emp where not sal = 3000; -- 부정 연산자
+
+select * from emp where job = 'MANAGER' or  job = 'SALESMAN' or job = 'CLERK'; --  or 연산자 (아래와 동일값 출력)
+
+select * from emp where job in ('MANAGER', 'SALESMAN', 'CLERK'); -- IN 연산자 (위와 동일값 출력)
+
+select * from emp where job != 'MANAGER' and job <> 'SALESMAN' and job ^= 'CLERK'; -- and 연산자 (아래와 동일값 출력)
+
+select * from emp where job not in ('MANAGER', 'SALESMAN', 'CLERK'); -- 부정 연산자 (위와 동일값 출력)
+
+select * from emp where sal >= 2000 and sal <= 3000; -- 대소 비교 and 연산자 (아래와 동일값 출력)
+
+select * from emp where sal between 2000 and 3000; -- 비트윈 사용 (위와 동일값 출력)
+
+select * from emp where sal not between 2000 and 3000; -- 비트윈 반대 사용
+
+select * from emp where ename like 'S%'; -- like 사용
+
+select * from emp where ename like '_L%'; -- like _ 사용
+
+select * from emp where comm = null; -- null 사용 (파란 느낌표 뜸)
+
+select * from emp where comm is null; -- is null 사용
+
+select * from emp where comm is not null; -- is null 사용
+
+select empno, ename, sal, deptno from emp where deptno = 10 union select empno, ename, sal, deptno from emp where deptno = 20 ; -- union 사용 (집합 연산자)
+
+select empno, ename, sal, deptno from emp minus select empno, ename, sal, deptno from emp where deptno = 10 ; -- minus 사용 (집합 연산자)
+
+select empno, ename, sal, deptno from emp intersect select empno, ename, sal, deptno from emp where deptno = 10 ; -- intersect 사용 (집합 연산자)
+
+select ename, upper(ename), lower(ename), initcap(ename) from emp; --  대소문자 교체 함수
+
+select * from emp where upper (ename) = upper('scott'); -- 대소문자 관계 X scott가 출력
+
+select ename, length(ename) from emp; -- 문자열 길이 구하는 함수
+ 
+create table dept_temp as select * from dept; -- 테이블 복사하여 테이블 만들기
+
+drop table dept_temp;  -- 테이블 삭제하기
+select * from dept_temp;
+
+insert into dept_temp (deptno, dname, loc) values (50, 'DATABASE', 'SEOUL'); -- 데이터 추가하기
+select * from dept_temp;
+
+insert into dept_temp (deptno, dname, loc) values (70, 'web', null);
+select * from dept_temp;
+
+create table emp_temp as select * from emp where 1 <> 1 ; -- 테이블 복사하여 테이블 만들기
+select * from emp_temp;
+
+drop table dept_temp2; -- 테이블 삭제
+create table dept_temp2 as select * from dept; -- 새로운 테이블 생성 
+select * from dept_temp2;
+
+update dept_temp2 set loc = 'seoul' ; -- 값 수정하기
+select * from dept_temp2;
+
+ROLLBACK; -- 데이터 되돌리기
+select * from dept_temp2;
+
+update dept_temp2 set dname = 'database', loc = 'seoul' where deptno = 40; -- 데이터 수정하기
+select * from dept_temp2;
+
+create table emp_temp2 as select * from emp;  -- 새로운 테이블 생성
+select * from emp_temp2;
+
+delete from emp_temp2 where job = 'MANGER' ; -- 매니저 객체 지우기
+select * from emp_temp2;
+
+delete from emp_temp2; -- 데이터 전체 삭제
+select * from emp_temp2;
+
+select sal from emp where ename = 'jones'; -- 사원 이름으로 검색 (서브쿼리)
+
+select * from emp where sal > 2975; -- 정수로 검색 (서브쿼리)
+
+create table dept_tcl as select * from dept;
+drop table dept_tcl;
+select * from dept_tcl;
+
+create table emp_ddl (empno number(4), ename varchar2(10), job varchar2(9), mgr number(4), hiredate date, sal number(7, 2), comm number(7,2), deptno number(2) ); -- 새 테이블 생성
+desc emp_ddl;
+
+create table dept_ddl as select * from dept; -- 테이블 확인
+desc dept_ddl;
+
+create table emp_alter as select * from emp; -- 테이블 변경
+select * from emp_alter;
+
+rename emp_alter to emp_rename; -- 테이블 이름 변경
+desc emp_alter; -- 테이블 구성 확인
+
+select * from emp_rename; -- 이름 바뀐 테이블 확인
+
+create table dept_ddl as select * from dept;
+
+create table dept_sequence as select * from dept where 1 <>1 ; -- 테이블 생성하기 (시퀀스) dept 테이블 사용
+select * from dept_sequence;
+
+create sequence seq_dept_sequence increment by 10 start with 10 maxvalue 90 minvalue 0 nocycle cache 2; -- 시퀀스 생성하기
+select * from user_sequences;
+
+insert into dept_sequence (deptno, dname, loc) values (seq_dept_sequence.nextval, 'database', 'seoul'); -- 시퀀스에서 생성한 순번 사용 확인 (9 번 반복하면 더 생성 불가)
+select * from dept_sequence order by deptno;
+
+select seq_dept_sequence.currval from  dual; -- 마지막으로 생성한 시퀀스 보기
+
+alter sequence seq_dept_sequence increment by 3 maxvalue 99 cycle; -- 시퀀스 수정하기
+select * from user_sequences;
+
+create table table_notnull (login_id varchar2(20) not null, login_pwd varchar2(20) not null, tel varchar2(20)); -- 제약 조건 만들기
+desc table_notnull;
+
+insert into table_notnull (login_id, login_pwd, tel) values ('test_id_01', null, '010-1234-5678'); -- not null에 값 넣기 (안 됨)
+insert into table_notnull (login_id, login_pwd) values ('test_id_01', '1234'); -- null인 곳에 데이터 삽입
+select * from table_notnull;
+
+create table table_notnull2(login_id varchar2(20) constraint table_lgnid_nn not null, login_pwd varchar2(20) constraint table_lgnpwd_nn not null, tel varchar2(20)); -- 제약 조건에 이름 설정
+select owner, constraint_name, constraint_type, table_name from user_constraints;
+
+alter table table_notnull modify (tel not null); -- 제약 조건 변경 (안 됨)
+
+update table_notnull set tel = '010-1234-5678' where login_id = 'test_id_01'; -- 열 데이터 수정
+select * from table_notnull;
+
+alter table table_notnull modify (tel not null);  -- not null 제약 조건 추가
+select owner, constraint_name, constraint_type, table_name from user_constraints; 
+
+alter table table_notnull2 modify (tel constraint tblnn_tel_nn not null); -- 제약 조건에 이름 추가
+select owner, constraint_name, constraint_type, table_name from user_constraints;
+
+desc table_notnull2; -- 테이블 확인하기
+
+alter table table_notnull2 rename constraint tblnn_tel_nn to tblnn2_tel_nn;  -- 이미 생성된 제약 조건 이름 변경
+select owner, constraint_name, constraint_type, table_name from user_constraints;
+
+alter table table_notnull2 drop constraint tblnn2_tel_nn; -- 제약 조건 삭제
+desc table_notnull2;
+
+create table table_unique(login_id varchar2(20) unique, login_pwd varchar2(20) not null, tel varchar2(20)); -- 유니크 제약 조건 (아이디에)
+desc table_unique;
+
+select owner, constraint_name, constraint_type, table_name from user_constraints where table_name = 'TABLE_UNIQUE';  -- 제약 조건 확인
+
+insert into table_unique (login_id, login_pwd, tel) values('test_id_01', 'pw01', '010-1234-5678'); -- 중복 입력 테스트
+select * from table_unique;
+
+insert into table_unique (login_id, login_pwd, tel) values('test_id_02', 'pw01', '010-1234-5678'); -- 다른 값 입력
+select * from table_unique;
+
+insert into table_unique (login_id, login_pwd, tel) values(null, 'pw01', '010-1234-5678'); -- null 값 입력
+select * from table_unique;
+
+create table table_unique2(login_id varchar2(20) constraint tblunq2_lgnid_unq unique, login_pwd varchar2(20) constraint tblunq2_lgnpw_nn not null, tel varchar2(20)); -- 테이블 생성 후 조건 이름 지정
+select owner, constraint_name, constraint_type, table_name from user_constraints where table_name like 'TABLE_UNIQUE%';
+
+alter table table_unique modify (tel unique); -- 생성한 테이블에 제약 조건 걸기 (안 됨)
+
+update table_unique set tel = null ; -- tell에 null 값 넣기
+select * from table_unique;
+
+alter table table_unique modify (tel unique); -- 유니크 제약 조건 설정
+select owner, constraint_name, constraint_type, table_name from user_constraints where table_name like 'TABLE_UNIQUE%';
+
+ALTER TABLE TABLE_UNIQUE2 MODIFY(TEL CONSTRAINT TBLUNQ_TEL_UNQ UNIQUE);  -- 유니크 제약 이름 지정
+select owner, constraint_name, constraint_type, table_name from user_constraints where table_name like 'TABLE_UNIQUE%';
+
+alter table table_unique2 rename constraint TBLUNQ_TEL_UNQ to tblunq2_tel_unq; -- 유니크 제약 조건 이름 수정
+select owner, constraint_name, constraint_type, table_name from user_constraints where table_name like 'TABLE_UNIQUE%';
+
+alter table table_unique2 drop constraint SYS_C0011127; -- 제약 조건 삭제하기
+select owner, constraint_name, constraint_type, table_name from user_constraints where table_name like 'TABLE_UNIQUE%';
+
+create table dept_fk (deptno number(2) constraint deptfk_deptno_pk PRIMARY key, dname varchar2(14), loc varchar2(13)); -- FOREIGN 테이블 생성 (DEPT)
+desc dept_fk;
+
+CREATE TABLE EMP_FK (EMPNO NUMBER(4) CONSTRAINT EMPFK_EMPNO_PK PRIMARY KEY, ENAME VARCHAR2(10), JOB VARCHAR2(9), MGR NUMBER(4), HIREDATE DATE, SAL NUMBER(7,2), COMM NUMBER(7,2), DEPTNO NUMBER(2) CONSTRAINT EMPFK_DEPTNO_FK REFERENCES DEPT_FK (DEPTNO)); -- 테이블 생성 (EMP)
+desc EMP_fk;
+
+INSERT INTO DEPT_FK VALUES (10, 'TEST_DNAME', 'TEST_LOC'); -- DEPT 데이터 삽입
+SELECT * FROM DEPT_FK;
+
+INSERT INTO EMP_FK VALUES (9999, 'TEST_NMAME', 'TEST_JOB', NULL, TO_DATE('2001/01/01', 'YYYY/MM/DD'), 3000, NULL, 10); -- EMP 데이터 삽입
+SELECT * FROM EMP_FK;
+
+CREATE TABLE TABLE_CHECK (LOGIN_ID VARCHAR2(20) CONSTRAINT TBLCK_LOGINID_PK PRIMARY KEY, LOGIN_PWD VARCHAR2(20) CONSTRAINT TBLCK_LOGINPW_CK CHECK (LENGTH(LOGIN_PWD) > 3), TEL VARCHAR2(20)); -- CHECK 테이블 생성
+DESC TABLE_CHECK;
+
+INSERT INTO TABLE_CHECK VALUES ('TEST_ID', '1234', '010-1234-5678');
+SELECT * FROM TABLE_CHECK;
+
+CREATE USER ORCLSTUDT IDENTIFIED BY ORACLE; -- SCOOT에 사용자 계정 생성 (안 됨)
+
+SELECT DEPTNO, JOB, AVG(SAL) FROM EMP GROUP BY DEPTNO, JOB HAVING AVG(SAL) >= 2000 ORDER BY DEPTNO, JOB;  -- 평균 급여 찾기 (조건
+
+SELECT E.EMPNO, E.ENAME, E.SAL, D.DEPTNO, D.DNAME, D.LOC FROM EMP E, DEPT D WHERE E.DEPTNO = D.DEPTNO AND SAL >= 3000;
+
+
