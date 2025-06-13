@@ -1,63 +1,46 @@
 package dto;
 
+import java.sql.Date;
+import java.util.Scanner;
+
 public class MemberDTO {
-	// 필드
-	
-	public String id ; 		// 아이디
-	public String pw ;		// 패스워드
-	public String nick ;	// 닉네임
-	public String email ;	// 이메일
 	
 
-	public MemberDTO memberDTO ;	// 멤버 객체
-	public CharacterDTO characterDTO;	// 캐릭터 객체
-	
+	private int mno ;  
+	private String bwriter ;  
+	private String id ;
+	private String pw ;
+	private Date regidate ;
+	public Scanner inpurStr;
 
-	
-
-
-
-	
-	// 기본 생성자
-	public MemberDTO() {
-		
-	}	// 기본 생성자 종료
-	
-	// 사용자가 만든 생성자
-	public MemberDTO(String id, String pw, String nick, String email, CharacterDTO characterDTO) {
-		this.id = id ;
-		this.pw = pw ;
-		this.nick = nick ;
-		this.email = email ;
-		this.characterDTO = characterDTO ;
-		
-	}	// 사용자가 만든 생성자 종료
-
-
-	
-
-
-	
-
-
-
-	
-
-
-
-	
-	// 생성자
-
-
-	
-	
-	
-	
-	
-	
-	
-	
-	// 메서드
-
-
+public int getMno() {
+		return mno;
+	}
+	public String getBwriter() {
+		return bwriter;
+	}
+	public String getId() {
+		return id;
+	}
+	public String getPw() {
+		return pw;
+	}
+	public Date getRegidate() {
+		return regidate;
+	}
+	public void setMno(int mno) {
+		this.mno = mno;
+	}
+	public void setBwriter(String bwriter) {
+		this.bwriter = bwriter;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public void setPw(String pw) {
+		this.pw = pw;
+	}
+	public void setRegidate(Date regidate) {
+		this.regidate = regidate;
+	}
 }
