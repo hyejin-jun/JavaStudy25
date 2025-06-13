@@ -4,14 +4,14 @@ public class Code6 {
 
 	public static void main(String[] args) {
 
-		// RGB Å¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½
-		System.out.println("==== RBG Å¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ byte ï¿½Úµï¿½ ====");
+		// RGB Å¸ÀÔ ¿¬½ÀÇÏ±â
+		System.out.println("==== RBG Å¸ÀÔ ¿¬½ÀÇÏ±â byte ÄÚµå ====");
 		byte type1 = -128 ;
 		byte type2 = -30 ;
 		byte type3 = 0 ;
 		byte type4 = 30 ;
 		byte type5 = 127 ; 
-		// byte type6 = 128 byteï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ 
+		// byte type6 = 128 byteÀÇ ¼ýÀÚ ¹üÀ§ ÃÊ°ú·Î ¿À·ù°¡ ¶á´Ù 
 		System.out.println(type1);
 		System.out.println(type2);
 		System.out.println(type3);
@@ -19,7 +19,7 @@ public class Code6 {
 		System.out.println(type5);
 		
 		
-		System.out.println("==== ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ char & int ï¿½Úµï¿½ ====");
+		System.out.println("==== À¯´ÏÄÚµå ¿¬½ÀÇÏ±â char & int ÄÚµå ====");
 		char c1 = 85 ;
 		char c2 = 125 ;
 		char c3 = 109 ;
@@ -27,18 +27,18 @@ public class Code6 {
 		 System.out.println(c2);
 		 System.out.println(c3);
 	
-		 int code1 = 1 ;
-		 int code2 = 2 ;
-		 int code3 = 3 ;
+		 int code1 = 'Àü' ;
+		 int code2 = 'Çý' ;
+		 int code3 = 'Áø' ;
 		 
 		 System.out.println(code1);
 		 System.out.println(code2);
-		 System.out.println(code3); // ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½ ï¿½ï¿½ï¿½Ú°ï¿½ ï¿½Ô·ÂµÈ´ï¿½ (51652)
+		 System.out.println(code3); // À¯´ÏÄÚµå ¼ýÀÚ°¡ ÀÔ·ÂµÈ´Ù (51652)
 		 
-		 System.out.println("==== byte ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ ====");
+		 System.out.println("==== byte ¿¬½ÀÇÏ±â ====");
 		 long no1 = 50 ;
 		 long no2 = 50L ;
-		 // long no3 = 9999999999999 ; ï¿½Ú¿ï¿½ Lï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
+		 // long no3 = 9999999999999 ; µÚ¿¡ LÀÌ ¾È ºÙÀ¸¸é ¿À·ù°¡ ¶ä
 		 long no4 = 100000000000000000L ;
 		 
 		 System.out.println(no1);
@@ -53,38 +53,38 @@ public class Code6 {
 		 
 		 System.out.println(bo1);
 		 System.out.println(bo2);
-		 System.out.println(bo3); // ï¿½ï¿½ï¿½ï¿½ï¿½: 0.8468468464684
-		 System.out.println(bo4); // ï¿½ï¿½ï¿½ï¿½ï¿½: 0.8468468
+		 System.out.println(bo3); // °á°ú°ª: 0.8468468464684
+		 System.out.println(bo4); // °á°ú°ª: 0.8468468
 		 
 		 boolean stop = false ;
 		 
 		 if(stop) {
-			 System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½");
+			 System.out.println("ÁßÁöÇÕ´Ï´Ù");
 			 }else {
-				 System.out.println("ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½");} // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Æ´Ï¸ï¿½ ï¿½Æ·ï¿½ï¿½ï¿½ ï¿½Î½ï¿½
+				 System.out.println("Ãâ¹ßÇÕ´Ï´Ù");} // À§¿¡ °ÍÀÌ ÂüÀÌ ¾Æ´Ï¸é ¾Æ·¡·Î ÀÎ½Ä
 		 
-		 System.out.println("==== Å¸ï¿½ï¿½ ï¿½ï¿½È¯ ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ ====");
+		 System.out.println("==== Å¸ÀÔ º¯È¯ ¿¬½ÀÇÏ±â ====");
 		byte by1 = 10 ;
-		int in1 = by1 ; // ï¿½Úµï¿½ Å¸ï¿½ï¿½ ï¿½ï¿½È¯
-		System.out.println(in1); // 10ï¿½ï¿½ ï¿½ï¿½ï¿½
-		// Å« Å¸ï¿½Ô¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½È´Ù¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ (byteï¿½ï¿½ intï¿½ï¿½ï¿½ï¿½ ï¿½Û¾Æ¼ï¿½ ï¿½×·ï¿½ï¿½ï¿½ ï¿½Ï¸ï¿½ ï¿½ï¿½ï¿½ï¿½)
+		int in1 = by1 ; // ÀÚµ¿ Å¸ÀÔ º¯È¯
+		System.out.println(in1); // 10ÀÌ Ãâ·Â
+		// Å« Å¸ÀÔ¿¡¼­ ÀÛÀº Å¸ÀÔÀ¸·Î °¡°Ô µÈ´Ù¸é ¿À·ù ¶ä (byte°¡ intº¸´Ù ÀÛ¾Æ¼­ ±×·¸°Ô ÇÏ¸é ¿À·ù)
 		
-		char ch1 = 'a' ;
+		char ch1 = '³ª' ;
 		in1 = ch1 ;
-		System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½ ï¿½ï¿½ = " + in1);
+		System.out.println("³ªÀÇ À¯´ÏÄÚµå °ª = " + in1);
 		
 		in1 = 800 ;
-		long lo1 = in1 ; // intï¿½ï¿½ Å« Å¸ï¿½ï¿½ï¿½ï¿½ iongï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯
+		long lo1 = in1 ; // int¸¦ Å« Å¸ÀÔÀÎ iongÀ¸·Î º¯È¯
 		System.out.println(lo1);
 		
 		in1 = 400 ;
-		double do1 = in1 ; // int ï¿½ï¿½ï¿½ï¿½ Å« Å¸ï¿½ï¿½ï¿½ï¿½ doubleï¿½ï¿½ ï¿½ï¿½È¯
-		System.out.println(do1); // ï¿½ï¿½ï¿½ï¿½ï¿½: 400.0
+		double do1 = in1 ; // int °ªÀ» Å« Å¸ÀÔÀÎ double·Î º¯È¯
+		System.out.println(do1); // °á°ú°ª: 400.0
 		
 		int in2 = 815468 ;
 		byte by2 = (byte) in2 ;
 		System.out.println(in2);
-		System.out.println(by2); // Å« Å¸ï¿½ï¿½ï¿½ï¿½ intï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ byteï¿½ï¿½ ï¿½ï¿½Æ¼ï¿½ ï¿½Õ½ï¿½ï¿½ï¿½ ï¿½Ï¾î³­ï¿½ï¿½.
+		System.out.println(by2); // Å« Å¸ÀÔÀÎ int¸¦ ÀÛÀº byte¿¡ ´ã¾Æ¼­ ¼Õ½ÇÀÌ ÀÏ¾î³­´Ù.
 		
 		
 		
